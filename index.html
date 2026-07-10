@@ -7,6 +7,19 @@
   <body>
     <script src="https://unpkg.com/jspsych@8.0.0"></script>
     
-    <script src="script.js"></script>
+    <!-- YOUR EXPERIMENT CODE GOES HERE -->
+    <script>
+      // Initialize jsPsych
+      const jsPsych = initJsPsych();
+
+      // Define your timeline
+      var trial = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<h1>Hello! The experiment is running.</h1><p>Press any key.</p>'
+      };
+
+      // Run it
+      jsPsych.run([trial]);
+    </script>
   </body>
 </html>
