@@ -2,23 +2,24 @@
 <html>
   <head>
     <title>My Thesis Experiment</title>
+    <script src="https://unpkg.com/jspsych@8.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-video-button-response@2.0.0"></script>
     <link href="https://unpkg.com/jspsych@8.0.0/css/jspsych.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <script src="https://unpkg.com/jspsych@8.0.0"></script>
-    
-    <!-- YOUR EXPERIMENT CODE GOES HERE -->
     <script>
-      // Initialize jsPsych
       const jsPsych = initJsPsych();
 
-      // Define your timeline
+      // Define your first trial (a video)
       var trial = {
-        type: jsPsychHtmlKeyboardResponse,
-        stimulus: '<h1>Hello! The experiment is running.</h1><p>Press any key.</p>'
+        type: jsPsychVideoButtonResponse,
+        stimulus: ['ST201.mp4'], // REPLACE with your actual filename
+        choices: ['Continue'],
+        prompt: '<p>Please watch the video.</p>'
       };
 
-      // Run it
+      // Run the experiment
       jsPsych.run([trial]);
     </script>
   </body>
